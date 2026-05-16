@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlexMaster — Exemples & Composants</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Specific styles for example visuals to make them look like real components */
+    .nav-demo { width: 100%; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; background: var(--bg-elevated); border-radius: 8px; }
+    .nav-links { display: flex; gap: 1rem; }
+    .card-demo { width: 100%; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .card { background: var(--primary-glow); border: 1px solid var(--primary); padding: 1rem; border-radius: 8px; flex: 1 1 150px; text-align: center; }
+    .hero-demo { width: 100%; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 1rem; min-height: 150px; }
+    .footer-demo { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 2rem; padding: 1rem; border-top: 1px solid var(--border); }
+    .footer-col { display: flex; flex-direction: column; gap: 0.5rem; }
+    .sidebar-demo { width: 100%; gap: 1rem; min-height: 150px; }
+    .sidebar { width: 60px; background: var(--bg-elevated); border-radius: 8px; }
+    .main-content { flex: 1; background: var(--bg-surface-hover); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">⚡</div>
+    <div class="logo-text">Flex<span>Master</span></div>
+  </div>
+  <nav>
+    <a href="index.html">Playground</a>
+    <a href="index.html#guide">Guide</a>
+    <a href="examples.html" class="active">Exemples</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">📦 Prêt à l'emploi</div>
+  <h1>Composants Flexbox</h1>
+  <p>Des exemples concrets de structures courantes à copier-coller directement dans vos projets.</p>
+</div>
+
+<div class="examples-container">
+  
+  <!-- Example 1: Header / Navbar -->
+  <div class="example-item">
+    <div class="example-info">
+      <h3>Barre de Navigation</h3>
+      <p>Un classique : le logo à gauche et les liens à droite en utilisant <code>justify-content: space-between</code>.</p>
+      <div class="example-code-container">
+        <button class="btn-copy-example" onclick="copyExampleCode(this)">Copier</button>
+        <pre><code>.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}</code></pre>
+      </div>
+    </div>
+    <div class="example-visual">
+      <div class="nav-demo" style="display: flex;">
+        <div style="font-weight: bold;">Logo</div>
+        <div class="nav-links">
+          <span>Accueil</span>
+          <span>Produits</span>
+          <span>Contact</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 2: Hero Section Centered -->
+  <div class="example-item">
+    <div class="example-info">
+      <h3>Section Hero Centrée</h3>
+      <p>Centrage parfait vertical et horizontal avec <code>flex-direction: column</code>.</p>
+      <div class="example-code-container">
+        <button class="btn-copy-example" onclick="copyExampleCode(this)">Copier</button>
+        <pre><code>.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 300px;
+}</code></pre>
+      </div>
+    </div>
+    <div class="example-visual">
+      <div class="hero-demo" style="display: flex;">
+        <div style="font-size: 1.2rem; font-weight: bold;">Titre Principal</div>
+        <div style="font-size: 0.8rem; opacity: 0.7;">Sous-titre accrocheur</div>
+        <div style="background: var(--primary); padding: 5px 15px; border-radius: 4px; font-size: 0.8rem;">Bouton</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 3: Card Grid -->
+  <div class="example-item">
+    <div class="example-info">
+      <h3>Grille de Cartes Responsive</h3>
+      <p>Utilise <code>flex-wrap: wrap</code> pour que les cartes passent à la ligne sur mobile.</p>
+      <div class="example-code-container">
+        <button class="btn-copy-example" onclick="copyExampleCode(this)">Copier</button>
+        <pre><code>.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.card {
+  flex: 1 1 200px;
+}</code></pre>
+      </div>
+    </div>
+    <div class="example-visual">
+      <div class="card-demo" style="display: flex;">
+        <div class="card">Carte 1</div>
+        <div class="card">Carte 2</div>
+        <div class="card">Carte 3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 4: Sidebar Layout -->
+  <div class="example-item">
+    <div class="example-info">
+      <h3>Layout avec Barre Latérale</h3>
+      <p>Une sidebar fixe et un contenu principal qui prend tout l'espace restant avec <code>flex: 1</code>.</p>
+      <div class="example-code-container">
+        <button class="btn-copy-example" onclick="copyExampleCode(this)">Copier</button>
+        <pre><code>.layout {
+  display: flex;
+  gap: 1rem;
+}
+.main-content {
+  flex: 1;
+}</code></pre>
+      </div>
+    </div>
+    <div class="example-visual">
+      <div class="sidebar-demo" style="display: flex;">
+        <div class="sidebar"></div>
+        <div class="main-content">Contenu</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 5: Footer Columns -->
+  <div class="example-item">
+    <div class="example-info">
+      <h3>Colonnes de Footer</h3>
+      <p>Répartition égale des colonnes de liens.</p>
+      <div class="example-code-container">
+        <button class="btn-copy-example" onclick="copyExampleCode(this)">Copier</button>
+        <pre><code>.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}</code></pre>
+      </div>
+    </div>
+    <div class="example-visual">
+      <div class="footer-demo" style="display: flex;">
+        <div class="footer-col">
+          <div style="font-weight: bold; font-size: 0.8rem;">Liens</div>
+          <div style="font-size: 0.7rem;">Lien 1</div>
+          <div style="font-size: 0.7rem;">Lien 2</div>
+        </div>
+        <div class="footer-col">
+          <div style="font-weight: bold; font-size: 0.8rem;">Société</div>
+          <div style="font-size: 0.7rem;">À propos</div>
+          <div style="font-size: 0.7rem;">Blog</div>
+        </div>
+        <div class="footer-col">
+          <div style="font-weight: bold; font-size: 0.8rem;">Légal</div>
+          <div style="font-size: 0.7rem;">Confidentialité</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Fait avec ❤️ pour démystifier <span>CSS Flexbox</span>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  function copyExampleCode(btn) {
+    const code = btn.nextElementSibling.innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      const originalText = btn.innerText;
+      btn.innerText = 'Copié !';
+      btn.style.color = 'var(--success)';
+      showToast('Code copié !');
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.color = '';
+      }, 2000);
+    });
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+</script>
+</body>
+</html>

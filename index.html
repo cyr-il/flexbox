@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlexMaster — Maîtrisez CSS Flexbox</title>
+  <meta name="description" content="Explorez et maîtrisez CSS Flexbox avec un playground interactif en temps réel. Générez votre code CSS instantanément." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <div class="logo-icon">⚡</div>
+    <div class="logo-text">Flex<span>Master</span></div>
+  </div>
+  <nav>
+    <a href="#playground" class="active" id="nav-playground">Playground</a>
+    <a href="#guide" id="nav-guide">Guide</a>
+    <a href="examples.html">Exemples</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">✦ Interactif &amp; instantané</div>
+  <h1>Maîtrisez<br/>CSS Flexbox</h1>
+  <p>Manipulez les propriétés, visualisez en temps réel et repartez avec votre code CSS prêt à l'emploi.</p>
+</div>
+
+<!-- PLAYGROUND -->
+<section id="playground">
+  <div class="section-wrapper">
+    <div class="playground-grid">
+
+      <!-- LEFT: CONTROLS -->
+      <div class="glass-panel" id="controls-panel">
+        <div class="tabs-header">
+          <button class="tab-btn active" id="tab-container-btn" onclick="switchTab('container')">📦 Conteneur</button>
+          <button class="tab-btn" id="tab-item-btn" onclick="switchTab('item')">🔷 Élément</button>
+        </div>
+
+        <!-- CONTAINER TAB -->
+        <div class="tab-content active" id="tab-container">
+
+          <!-- flex-direction -->
+          <div class="ctrl-group">
+            <div class="ctrl-label"><code>flex-direction</code></div>
+            <div class="radio-grid cols-2">
+              <input type="radio" name="flex-direction" id="fd-row" value="row" checked />
+              <label for="fd-row">
+                <svg width="22" height="16" viewBox="0 0 22 16"><rect x="1" y="5" width="5" height="6" rx="1.5" fill="currentColor" opacity=".9"/><rect x="8.5" y="5" width="5" height="6" rx="1.5" fill="currentColor" opacity=".6"/><rect x="16" y="5" width="5" height="6" rx="1.5" fill="currentColor" opacity=".35"/><path d="M2 8h18" stroke="currentColor" stroke-width="1" opacity=".3"/><path d="M18 6l2 2-2 2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                row
+              </label>
+              <input type="radio" name="flex-direction" id="fd-row-reverse" value="row-reverse" />
+              <label for="fd-row-reverse">
+                <svg width="22" height="16" viewBox="0 0 22 16"><rect x="16" y="5" width="5" height="6" rx="1.5" fill="currentColor" opacity=".9"/><rect x="8.5" y="5" width="5" height="6" rx="1.5" fill="currentColor" opacity=".6"/><rect x="1" y="5" width="5" height="6" rx="1.5" fill="currentColor" opacity=".35"/><path d="M4 6L2 8l2 2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                row-reverse
+              </label>
+              <input type="radio" name="flex-direction" id="fd-column" value="column" />
+              <label for="fd-column">
+                <svg width="16" height="22" viewBox="0 0 16 22"><rect x="3" y="1" width="10" height="5" rx="1.5" fill="currentColor" opacity=".9"/><rect x="3" y="8.5" width="10" height="5" rx="1.5" fill="currentColor" opacity=".6"/><rect x="3" y="16" width="10" height="5" rx="1.5" fill="currentColor" opacity=".35"/><path d="M6 18l2 2 2-2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                column
+              </label>
+              <input type="radio" name="flex-direction" id="fd-column-reverse" value="column-reverse" />
+              <label for="fd-column-reverse">
+                <svg width="16" height="22" viewBox="0 0 16 22"><rect x="3" y="16" width="10" height="5" rx="1.5" fill="currentColor" opacity=".9"/><rect x="3" y="8.5" width="10" height="5" rx="1.5" fill="currentColor" opacity=".6"/><rect x="3" y="1" width="10" height="5" rx="1.5" fill="currentColor" opacity=".35"/><path d="M6 4L8 2l2 2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+                column-reverse
+              </label>
+            </div>
+          </div>
+
+          <!-- flex-wrap -->
+          <div class="ctrl-group">
+            <div class="ctrl-label"><code>flex-wrap</code></div>
+            <div class="radio-grid">
+              <input type="radio" name="flex-wrap" id="fw-nowrap" value="nowrap" checked />
+              <label for="fw-nowrap">nowrap</label>
+              <input type="radio" name="flex-wrap" id="fw-wrap" value="wrap" />
+              <label for="fw-wrap">wrap</label>
+              <input type="radio" name="flex-wrap" id="fw-wrap-reverse" value="wrap-reverse" />
+              <label for="fw-wrap-reverse">wrap-reverse</label>
+            </div>
+          </div>
+
+          <!-- justify-content -->
+          <div class="ctrl-group">
+            <div class="ctrl-label"><code>justify-content</code></div>
+            <div class="radio-grid cols-3">
+              <input type="radio" name="justify-content" id="jc-start" value="flex-start" checked />
+              <label for="jc-start">
+                <svg width="28" height="18" viewBox="0 0 28 18"><rect x="1" y="5" width="6" height="8" rx="1.5" fill="currentColor"/><rect x="9" y="5" width="5" height="8" rx="1.5" fill="currentColor" opacity=".6"/><rect x="16" y="5" width="4" height="8" rx="1.5" fill="currentColor" opacity=".35"/><line x1="1" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg>
+                flex-start
+              </label>
+              <input type="radio" name="justify-content" id="jc-end" value="flex-end" />
+              <label for="jc-end">
+                <svg width="28" height="18" viewBox="0 0 28 18"><rect x="21" y="5" width="6" height="8" rx="1.5" fill="currentColor"/><rect x="14" y="5" width="5" height="8" rx="1.5" fill="currentColor" opacity=".6"/><rect x="8" y="5" width="4" height="8" rx="1.5" fill="currentColor" opacity=".35"/><line x1="27" y1="1" x2="27" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg>
+                flex-end
+              </label>
+              <input type="radio" name="justify-content" id="jc-center" value="center" />
+              <label for="jc-center">
+                <svg width="28" height="18" viewBox="0 0 28 18"><rect x="7" y="5" width="5" height="8" rx="1.5" fill="currentColor" opacity=".7"/><rect x="13.5" y="5" width="5" height="8" rx="1.5" fill="currentColor"/><rect x="20" y="5" width="5" height="8" rx="1.5" fill="currentColor" opacity=".7"/></svg>
+                center
+              </label>
+              <input type="radio" name="justify-content" id="jc-between" value="space-between" />
+              <label for="jc-between">
+                <svg width="28" height="18" viewBox="0 0 28 18"><rect x="1" y="5" width="6" height="8" rx="1.5" fill="currentColor"/><rect x="11" y="5" width="6" height="8" rx="1.5" fill="currentColor" opacity=".6"/><rect x="21" y="5" width="6" height="8" rx="1.5" fill="currentColor"/></svg>
+                space-between
+              </label>
+              <input type="radio" name="justify-content" id="jc-around" value="space-around" />
+              <label for="jc-around">
+                <svg width="28" height="18" viewBox="0 0 28 18"><rect x="3" y="5" width="5" height="8" rx="1.5" fill="currentColor"/><rect x="11.5" y="5" width="5" height="8" rx="1.5" fill="currentColor" opacity=".6"/><rect x="20" y="5" width="5" height="8" rx="1.5" fill="currentColor"/></svg>
+                space-around
+              </label>
+              <input type="radio" name="justify-content" id="jc-evenly" value="space-evenly" />
+              <label for="jc-evenly">
+                <svg width="28" height="18" viewBox="0 0 28 18"><rect x="2" y="5" width="5" height="8" rx="1.5" fill="currentColor"/><rect x="11.5" y="5" width="5" height="8" rx="1.5" fill="currentColor" opacity=".6"/><rect x="21" y="5" width="5" height="8" rx="1.5" fill="currentColor"/></svg>
+                space-evenly
+              </label>
+            </div>
+          </div>
+
+          <!-- align-items -->
+          <div class="ctrl-group">
+            <div class="ctrl-label"><code>align-items</code></div>
+            <div class="radio-grid cols-3">
+              <input type="radio" name="align-items" id="ai-start" value="flex-start" />
+              <label for="ai-start">flex-start</label>
+              <input type="radio" name="align-items" id="ai-end" value="flex-end" />
+              <label for="ai-end">flex-end</label>
+              <input type="radio" name="align-items" id="ai-center" value="center" />
+              <label for="ai-center">center</label>
+              <input type="radio" name="align-items" id="ai-stretch" value="stretch" checked />
+              <label for="ai-stretch">stretch</label>
+              <input type="radio" name="align-items" id="ai-baseline" value="baseline" />
+              <label for="ai-baseline">baseline</label>
+            </div>
+          </div>
+
+          <!-- align-content -->
+          <div class="ctrl-group">
+            <div class="ctrl-label"><code>align-content</code></div>
+            <div class="radio-grid cols-3">
+              <input type="radio" name="align-content" id="ac-start" value="flex-start" />
+              <label for="ac-start">flex-start</label>
+              <input type="radio" name="align-content" id="ac-end" value="flex-end" />
+              <label for="ac-end">flex-end</label>
+              <input type="radio" name="align-content" id="ac-center" value="center" />
+              <label for="ac-center">center</label>
+              <input type="radio" name="align-content" id="ac-between" value="space-between" />
+              <label for="ac-between">space-between</label>
+              <input type="radio" name="align-content" id="ac-around" value="space-around" />
+              <label for="ac-around">space-around</label>
+              <input type="radio" name="align-content" id="ac-stretch" value="stretch" checked />
+              <label for="ac-stretch">stretch</label>
+            </div>
+          </div>
+
+          <!-- row-gap -->
+          <div class="ctrl-group">
+            <div class="ctrl-label"><code>row-gap</code></div>
+            <div class="slider-row">
+              <input type="range" id="ctrl-row-gap" min="0" max="60" value="8" />
+              <span class="slider-value" id="ctrl-row-gap-val">8px</span>
+            </div>
+          </div>
+
+          <!-- column-gap -->
+          <div class="ctrl-group">
+            <div class="ctrl-label"><code>column-gap</code></div>
+            <div class="slider-row">
+              <input type="range" id="ctrl-col-gap" min="0" max="60" value="8" />
+              <span class="slider-value" id="ctrl-col-gap-val">8px</span>
+            </div>
+          </div>
+
+          <button class="btn-reset" onclick="resetAll()">↺ Réinitialiser tout</button>
+        </div>
+
+        <!-- ITEM TAB -->
+        <div class="tab-content" id="tab-item">
+          <div class="item-actions">
+            <button class="btn-icon success" id="btn-add" onclick="addItem()">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Ajouter
+            </button>
+            <button class="btn-icon danger" id="btn-remove" onclick="removeItem()">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Supprimer
+            </button>
+          </div>
+
+          <div id="item-controls-wrapper">
+            <div class="item-select-hint" id="item-hint">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="6" y="10" width="8" height="12" rx="2" fill="currentColor"/><rect x="18" y="10" width="8" height="12" rx="2" fill="currentColor" opacity=".4"/><path d="M9 22v4M23 22v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Cliquez sur un élément dans l'aperçu pour le sélectionner et modifier ses propriétés individuelles.
+            </div>
+            <div id="item-controls" style="display:none">
+              <div class="ctrl-group">
+                <div class="ctrl-label"><code>flex-grow</code></div>
+                <div class="slider-row">
+                  <input type="range" id="ctrl-grow" min="0" max="5" value="0" step="1" oninput="updateItemProp('flex-grow', this.value)" />
+                  <span class="slider-value" id="ctrl-grow-val">0</span>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <div class="ctrl-label"><code>flex-shrink</code></div>
+                <div class="slider-row">
+                  <input type="range" id="ctrl-shrink" min="0" max="5" value="1" step="1" oninput="updateItemProp('flex-shrink', this.value)" />
+                  <span class="slider-value" id="ctrl-shrink-val">1</span>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <div class="ctrl-label"><code>flex-basis</code></div>
+                <div class="slider-row">
+                  <input type="range" id="ctrl-basis" min="0" max="300" value="0" step="10" oninput="updateItemProp('flex-basis', this.value + 'px')" />
+                  <span class="slider-value" id="ctrl-basis-val">auto</span>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <div class="ctrl-label"><code>align-self</code></div>
+                <div class="radio-grid cols-3">
+                  <input type="radio" name="align-self" id="as-auto" value="auto" checked />
+                  <label for="as-auto">auto</label>
+                  <input type="radio" name="align-self" id="as-start" value="flex-start" />
+                  <label for="as-start">flex-start</label>
+                  <input type="radio" name="align-self" id="as-end" value="flex-end" />
+                  <label for="as-end">flex-end</label>
+                  <input type="radio" name="align-self" id="as-center" value="center" />
+                  <label for="as-center">center</label>
+                  <input type="radio" name="align-self" id="as-stretch" value="stretch" />
+                  <label for="as-stretch">stretch</label>
+                </div>
+              </div>
+              <div class="ctrl-group">
+                <div class="ctrl-label"><code>order</code></div>
+                <input type="number" class="num-input" id="ctrl-order" value="0" min="-10" max="10" oninput="updateItemProp('order', this.value)" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: PREVIEW + CODE -->
+      <div class="preview-panel">
+        <!-- Preview -->
+        <div class="glass-panel" id="preview-glass">
+          <div class="preview-header">
+            <h3>Aperçu en direct</h3>
+            <div class="preview-meta">
+              <span class="axis-badge" id="main-axis-badge">→ main axis</span>
+              <span class="axis-badge" id="cross-axis-badge">↓ cross axis</span>
+            </div>
+          </div>
+          <div class="preview-area">
+            <div id="flex-preview"></div>
+          </div>
+          <div style="padding:10px 16px;border-top:1px solid var(--border);display:flex;gap:8px;align-items:center;">
+            <span style="font-size:0.75rem;color:var(--text-muted);">Éléments :</span>
+            <span style="font-size:0.75rem;color:var(--text-subtle);font-family:var(--font-code)" id="item-count-label">3 items</span>
+          </div>
+        </div>
+
+        <!-- Code Output -->
+        <div class="glass-panel" id="code-glass">
+          <div class="code-panel-header">
+            <h3>
+              <div class="window-dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+              </div>
+              CSS généré
+            </h3>
+            <span style="font-size:0.75rem;color:var(--text-muted);">styles.css</span>
+          </div>
+          <div class="code-body">
+            <pre id="code-output"></pre>
+          </div>
+          <div class="code-actions">
+            <button class="btn-copy" id="btn-copy-css" onclick="copyCss()">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="4" y="4" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M2 10V2h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Copier le CSS
+            </button>
+            <button class="btn-copy-html" id="btn-copy-html" onclick="copyHtml()">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 4L1 7l3 3M10 4l3 3-3 3M8 2l-2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Copier HTML + CSS
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section id="guide" style="padding-top:1rem;">
+  <div class="section-wrapper">
+    <h2 class="section-title">Guide des propriétés <span>Flexbox</span></h2>
+    <p class="section-sub">Toutes les propriétés expliquées, avec leurs valeurs possibles.</p>
+    <div class="guide-grid" id="guide-grid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Fait avec ❤️ pour démystifier <span>CSS Flexbox</span>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
